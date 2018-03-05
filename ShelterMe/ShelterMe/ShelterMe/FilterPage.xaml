@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShelterMe.FilterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="ShelterName"
+                    Title="Shelter Name">
+                <Picker.Items>
+                    <x:String>My Sister's House</x:String>
+                    <x:String>The Atlanta Day Center for Women &amp; Children</x:String>
+                    <x:String>The Shepherd's Inn</x:String>
+                    <x:String>Fuqua Hall</x:String>
+                    <x:String>Atlanta's Children Center</x:String>
+                    <x:String>Eden Village</x:String>
+                    <x:String>Our House</x:String>
+                    <x:String>Covenant House Georgia</x:String>
+                    <x:String>Nicholas House</x:String>
+                    <x:String>Hope Atlanta</x:String>
+                    <x:String>Gateway Center</x:String>
+                    <x:String>Young Adult Guidance Center</x:String>
+                    <x:String>Homes of Light</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="Gender"
+                    Title="Gender">
+                <Picker.Items>
+                    <x:String>Men</x:String>
+                    <x:String>Women</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="AgeRange"
+                    Title="Age Range">
+                <Picker.Items>
+                    <x:String>Families w/ newborns</x:String>
+                    <x:String>Children</x:String>
+                    <x:String>Young adults</x:String>
+                    <x:String>Anyone</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

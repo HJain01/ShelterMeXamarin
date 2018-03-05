@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShelterMe"
+             x:Class="ShelterMe.MainPage">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#F4C6B7">
+            <Button Text="Logout"
+                    FontSize="8"
+                    Clicked="onLogoutClicked"
+                    AbsoluteLayout.LayoutBounds=".9,0,.25,.1"
+                    AbsoluteLayout.LayoutFlags="All" />
+            <Button Text="Filter"
+                    Clicked="FilterClicked"
+                    AbsoluteLayout.LayoutBounds=".05,0,.3,.12"
+                    AbsoluteLayout.LayoutFlags="All"/>
+            <ScrollView AbsoluteLayout.LayoutBounds="0,.95,1,.80"
+                        AbsoluteLayout.LayoutFlags="All">
+                <StackLayout>
+                    <Button Text="My Sister's House"
+                            Clicked="ShelterSelected"/>
+                    <Button Text="The Atlanta Day Center for Women &amp; Children"
+                            Clicked="ShelterSelected"/>
+                    <Button Text="The Shepherd's Inn"
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Fuqua Hall" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Atlanta's Children Center" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Eden Village"
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Our House" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Convenant House Georgia" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Nicholas House" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Hope Atlanta" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Gateway Center"
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Young Adult Guidance Center" 
+                            Clicked="ShelterSelected"/>
+                    <Button Text="Homes Of Light" 
+                            Clicked="ShelterSelected"/>
+                </StackLayout>
+            </ScrollView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

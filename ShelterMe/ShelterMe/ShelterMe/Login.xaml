@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShelterMe.Login">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="#F4C6B7">
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,.3"
+                            AbsoluteLayout.LayoutFlags="All">
+                <Label x:Name="LoginFailed" 
+                       Text="Login attempt has failed. Reenter username and password."
+                       FontSize="16"
+                       TextColor="Red"
+                       IsVisible="False" 
+                       AbsoluteLayout.LayoutBounds=".65,0,.9,1" 
+                       AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,.3,1,.3" 
+                            AbsoluteLayout.LayoutFlags="All">
+                <Entry x:Name="UsernameEntry" 
+                       Placeholder="Username" 
+                       AbsoluteLayout.LayoutBounds=".05,.3,.5,.4" 
+                       AbsoluteLayout.LayoutFlags="All" />
+                <Label Text="Username:" 
+                       AbsoluteLayout.LayoutBounds=".05,.15,.3,.3" 
+                       AbsoluteLayout.LayoutFlags="All" 
+                       FontSize="8"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,.5,1,.3" 
+                            AbsoluteLayout.LayoutFlags="All">
+                <Entry x:Name="PasswordEntry" 
+                       Placeholder="Password" 
+                       AbsoluteLayout.LayoutBounds=".05,.3,.5,.4" 
+                       AbsoluteLayout.LayoutFlags="All" />
+                <Label Text="Password:" 
+                       AbsoluteLayout.LayoutBounds=".05,.15,.3,.3" 
+                       AbsoluteLayout.LayoutFlags="All" 
+                       FontSize="8"/>
+                <Button Text="Login" 
+                        AbsoluteLayout.LayoutBounds=".5,1,.4,.4"
+                        AbsoluteLayout.LayoutFlags="All"
+                        Clicked="LoginClicked" />
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

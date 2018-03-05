@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShelterMe.InformationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ShelterName" />
+            <Label x:Name="Capacity" />
+            <Label x:Name="Restrictions" />
+            <Label x:Name="Longitude" />
+            <Label x:Name="Latitude" />
+            <Label x:Name="Address" />
+            <Label x:Name="PhoneNumber" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShelterMe.Registration">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#F4C6B7"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical"
+                         VerticalOptions="FillAndExpand">
+                <Label Text="Enter your information below" 
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="FillAndExpand"/>
+                <Entry x:Name ="FirstName"
+                       Placeholder="First Name"
+                       HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="LastName" 
+                       Placeholder="Last Name"
+                       HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="Email"
+                       Placeholder="Email"
+                       HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="Password"
+                       Placeholder="Password"
+                       IsPassword="True"
+                       HorizontalOptions="FillAndExpand"/>
+                <Entry x:Name="ConfirmPassword"
+                       Placeholder="Confirm Password"
+                       IsPassword="True"
+                       HorizontalOptions="FillAndExpand"/>
+                <Picker x:Name="UserType"
+                        Title="User Type"
+                        HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>User</x:String>
+                        <x:String>Administrator</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="Sign Up"
+                        Clicked="signUpClicked"
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
