@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShelterMe.InformationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#F4C6B7">
+            <Label x:Name="UniqueKey"
+                   IsVisible="false" />
             <Label x:Name="ShelterName" />
             <Label x:Name="Capacity" />
             <Label x:Name="Restrictions" />
@@ -11,6 +13,12 @@
             <Label x:Name="Latitude" />
             <Label x:Name="Address" />
             <Label x:Name="PhoneNumber" />
+            <Button Text="Reserve a Room"
+                    Clicked="ReserveClicked"/>
+            <Button x:Name="LeaveRoom"
+                    Text="Leave Room"
+                    Clicked="LeaveRoomClicked"
+                    IsVisible="false"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

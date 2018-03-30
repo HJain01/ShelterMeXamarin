@@ -2,22 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
-             x:Class="ShelterMe.FilterPage">
+             x:Class="ShelterMe.AddShelterPage">
     <ContentPage.Content>
         <ScrollView BackgroundColor="#F4C6B7">
             <StackLayout>
-                <Entry  x:Name="shelterName"
+                <Entry  x:Name="shelterName" 
                         Placeholder="Shelter Name" />
-                <Label Text="Gender"/>
+                <Entry  x:Name="capacity"
+                        Placeholder="Capacity" />
+                <Label Text="Restrictions:" />
                 <controls:CheckBox x:Name="men"  DefaultText="Men" />
                 <controls:CheckBox x:Name="women" DefaultText="Women" />
-                <Label Text="Age Range"/>
                 <controls:CheckBox x:Name="newborns" DefaultText="newborns" />
                 <controls:CheckBox x:Name="children" DefaultText="Children" />
                 <controls:CheckBox x:Name="youngAdults" DefaultText="Young Adults" />
-                <controls:CheckBox x:Name="anyone" DefaultText="Anyone" />
-                <Button Text="Filter"
-                        Clicked="Filter2Clicked"
+                <controls:CheckBox x:Name="veterans" DefaultText="Veterans" />
+                <controls:CheckBox x:Name="Anyone" DefaultText="Anyone" />
+                <Entry  x:Name="longitude"
+                        Placeholder="Longitude" />
+                <Entry  x:Name="latitude"
+                        Placeholder="Latitude" />
+                <Entry  x:Name="address"
+                        Placeholder="Address" />
+                <Entry  x:Name="phoneNumber"
+                        Placeholder="Phone Number" />
+                <Button Text="Add Shelter" 
+                        Clicked="AddShelter2Clicked"
                         WidthRequest="100"
                         HorizontalOptions="Center"/>
             </StackLayout>

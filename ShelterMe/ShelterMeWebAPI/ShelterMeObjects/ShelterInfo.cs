@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShelterMeObjects {
     public class ShelterInfo {
-        public string UniqueKey { get; set; }
+        public int UniqueKey { get; set; }
         public string ShelterName { get; set; }
-        public string Capacity { get; set; }
+        public int Capacity { get; set; }
         public string Restrictions { get; set; }
-        public string Longitude { get; set; }
-        public string Latitude { get; set; }
+        public float Longitude { get; set; }
+        public float Latitude { get; set; }
         public string SpecialNotes { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }

@@ -12,7 +12,7 @@ namespace ShelterMeDataAccess {
         public Dictionary<string, string> getUsernameAndPassword() {
             Dictionary<string, string> user = new Dictionary<string, string>();
             using (SqlConnection conn = new SqlConnection(
-                "Data Source=DESKTOP-STK0G8E\\SQLEXPRESS;Initial Catalog=ShelterMe;Integrated Security=SSPI")) {
+                "Data Source = tcp:shelterme.database.windows.net,1433; Initial Catalog = ShelterMe; User ID = Harsh_Jain; Password = Nadiad1998")) {
                 SqlDataReader rdr = null;
                 conn.Open();
                 SqlCommand command = new SqlCommand(@"SELECT EMAIL, PASSWORD FROM USER_INFORMATION", conn);
@@ -30,7 +30,7 @@ namespace ShelterMeDataAccess {
         public List<string> getPassword() {
             List<string> password = new List<string>();
             using (SqlConnection conn = new SqlConnection(
-                "Data Source=DESKTOP-STK0G8E\\SQLEXPRESS;Initial Catalog=ShelterMe;Integrated Security=SSPI")) {
+                "Data Source=tcp:shelterme.database.windows.net,1433;Initial Catalog=ShelterMe;User ID=Harsh_Jain;Password=Nadiad1998")) {
                 SqlDataReader rdr = null;
                 conn.Open();
                 SqlCommand command = new SqlCommand(@"SELECT PASSWORD FROM USER_INFORMATION", conn);
@@ -45,10 +45,9 @@ namespace ShelterMeDataAccess {
         }
         public void EnterUserData(string firstName, string lastName, string email, string password, string userType) {
             using (SqlConnection conn = new SqlConnection(
-                "Data Source=DESKTOP-STK0G8E\\SQLEXPRESS;Initial Catalog=ShelterMe;Integrated Security=SSPI")) {
+                "Data Source=tcp:shelterme.database.windows.net,1433;Initial Catalog=ShelterMe;User ID=Harsh_Jain;Password=Nadiad1998")) {
                 conn.Open();
-                SqlCommand command = new SqlCommand($"INSERT INTO USER_INFORMATION"
-                    + "VALUES({firstName}, {lastName}, {email}, {password}, {userType})", conn);
+                SqlCommand command = new SqlCommand($"INSERT INTO USER_INFORMATION VALUES('{firstName}', '{lastName}', '{email}', '{password}', '{userType}')", conn);
                 command.ExecuteNonQuery();
                 conn.Close();
             }

@@ -6,7 +6,7 @@
         <AbsoluteLayout BackgroundColor="#F4C6B7">
             <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,.3"
                             AbsoluteLayout.LayoutFlags="All">
-                <Label x:Name="LoginFailed" 
+                <Label x:Name="LoginFailed"
                        Text="Login attempt has failed. Reenter username and password."
                        FontSize="16"
                        TextColor="Red"

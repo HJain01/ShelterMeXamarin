@@ -20,7 +20,7 @@ namespace ShelterMe {
             if (results) {
                 await Navigation.PushAsync(new MainPage());
             } else {
-                LoginFailed.IsVisible = true;
+                await DisplayAlert("Login Failed", "The login failed. Re-enter username and password", "Ok");
             }
         }
     }

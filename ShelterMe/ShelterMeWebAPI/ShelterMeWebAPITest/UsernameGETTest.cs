@@ -8,7 +8,6 @@ namespace ShelterMeWebAPITest {
         [TestMethod]
         public void TestGET() {
             UserInfoService userInfo = new UserInfoService();
-            userInfo.ContainsUsername("jainh9999@gmail.com");
         }
     }
 }

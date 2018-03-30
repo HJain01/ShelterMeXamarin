@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ShelterMeObjects\ShelterMeObjects.csproj">
+      <Project>{cf7c3f6c-cd45-4b4e-8cd7-d49dddd6c95d}</Project>
+      <Name>ShelterMeObjects</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UserInfoDataAccess\ShelterMeDataAccess.csproj">
       <Project>{ad2886e7-6fa1-455d-8a1a-b84d5cc7070a}</Project>
       <Name>ShelterMeDataAccess</Name>
