@@ -23,6 +23,7 @@ namespace ShelterMe.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsGoogleMaps.Init("AIzaSyCRoMOt4kKcNCmph_leFSttzI8n4CGG0qM");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
