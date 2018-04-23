@@ -7,9 +7,17 @@ using Xamarin.Forms.Xaml;
 namespace ShelterMe {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage {
-        public MainPage() {
+        UserInformation userIn = new UserInformation();
+        List<ShelterInformation> shelterInfo = new List<ShelterInformation>();
+        ShelterMeWebAPIAgent agent = new ShelterMeWebAPIAgent();
+        public MainPage(UserInformation user) {
             InitializeComponent();
-            ShelterMeWebAPIAgent agent = new ShelterMeWebAPIAgent();
+            userIn = user;
+            if (userIn.userType == "User" || userIn.userType == "user") {
+                AddShelter.IsVisible = false;
+            }
+            Task<List<ShelterInformation>> shelterInfoTask = Task.Run(async () => await agent.GetShelterInformation());
+            shelterInfo = shelterInfoTask.Result;
             List<string> shelterNames = new List<string>();
             Task.Delay(1000);
             Task<List<string>> shelterNameListTask = Task.Run(async () => await agent.getShelterNames());
@@ -36,12 +44,10 @@ namespace ShelterMe {
             await Navigation.PushAsync(new FilterPage());
         }
         private async void AddShelterClicked(Object sender, EventArgs e) {
-            await Navigation.PushAsync(new AddShelterPage());
+            await Navigation.PushAsync(new AddShelterPage(userIn));
         }
-        //public void addButton(Button button) {
-        //    StackLayout parent = null;
-        //    parent.Children.Add(button);
-        //    Content = parent;
-        //}
+        public async void MapSelected(Object sender, EventArgs e) {
+            await Navigation.PushAsync(new MapPage(shelterInfo));
+        }
     }
 }

@@ -15,16 +15,20 @@
                     FontSize="9"
                     AbsoluteLayout.LayoutBounds=".05,0,.32,.1"
                     AbsoluteLayout.LayoutFlags="All"/>
-            <Button Text="Add Shelter"
+            <Button x:Name="AddShelter"
+                    Text="Add Shelter"
                     Clicked="AddShelterClicked"
                     FontSize="9"
+                    IsVisible="true"
                     AbsoluteLayout.LayoutBounds=".55,0,.37,.1"
                     AbsoluteLayout.LayoutFlags="All" />
             <ScrollView AbsoluteLayout.LayoutBounds="0,.95,1,.80"
                         AbsoluteLayout.LayoutFlags="All">
                 <StackLayout x:Name="stack"
                              BackgroundColor="#F4C6B7">
-                    
+                    <Button Text="Map"
+                            Clicked="MapSelected" />
+
                 </StackLayout>
             </ScrollView>
         </AbsoluteLayout>

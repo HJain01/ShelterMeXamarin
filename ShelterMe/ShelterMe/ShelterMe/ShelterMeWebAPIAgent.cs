@@ -25,6 +25,19 @@ namespace ShelterMe {
             }
         }
 
+        public async Task<UserInformation> getUserData(string usernameIn) {
+            string userString = "";
+            HttpClient client = new HttpClient();
+            var uri = new Uri($"https://sheltermewebapi.azurewebsites.net/api/userData?username={usernameIn}");
+            HttpResponseMessage response = await client.GetAsync(uri);
+            if (response.IsSuccessStatusCode) {
+                userString = await response.Content.ReadAsStringAsync();
+                var t = JsonConvert.DeserializeObject<UserInformation>(userString);
+                return t;
+            }
+            return null;
+        }
+
         public async void EnterData(string firstNameIn, string lastNameIn, string emailIn, string passwordIn, string userTypeIn) {
             try {
                 UserInformation userInformation = new UserInformation();
@@ -57,6 +70,16 @@ namespace ShelterMe {
             } catch (Exception ex) {
                 return null;
             }
+        }
+
+        public async Task<List<ShelterInformation>> GetShelterInformation() {
+            string listString = "";
+            HttpClient client = new HttpClient();
+            var uri = new Uri($"http://sheltermewebapi.azurewebsites.net/api/allShelters");
+            HttpResponseMessage response = await client.GetAsync(uri);
+            listString = await response.Content.ReadAsStringAsync();
+            var t = JsonConvert.DeserializeObject<List<ShelterInformation>>(listString);
+            return t;
         }
 
         public async Task<List<ShelterInformation>> getFilteredSheltersByRestrictions(string genderOrAgeRange) {
@@ -143,7 +166,7 @@ namespace ShelterMe {
                 shelterInformation.phoneNumber = phoneNumberIn;
                 var stringContent = new StringContent(JsonConvert.SerializeObject(shelterInformation));
                 HttpClient client = new HttpClient();
-                var uri = $"https://sheltermewebapi.azurewebsites.net/api/enterShelterData?id={idIn}&shelterName={shelterNameIn}&capacity={capacityIn}&restrictions={restrictionsIn}&longitude={longitudeIn}&latitude={latitudeIn}&address={addressIn}&phoneNumber={phoneNumberIn}";
+                var uri = $"https://sheltermewebapi.azurewebsites.net/api/reduceCapacity?id={idIn}&shelterName={shelterNameIn}&capacity={capacityIn}&restrictions={restrictionsIn}&longitude={longitudeIn}&latitude={latitudeIn}&address={addressIn}&phoneNumber={phoneNumberIn}";
                 HttpResponseMessage response = await client.PutAsync(uri, stringContent);
             } catch (Exception ex) {
                 throw ex;
@@ -162,7 +185,7 @@ namespace ShelterMe {
                 shelterInformation.phoneNumber = phoneNumberIn;
                 var stringContent = new StringContent(JsonConvert.SerializeObject(shelterInformation));
                 HttpClient client = new HttpClient();
-                var uri = $"https://sheltermewebapi.azurewebsites.net/api/enterShelterData?id={idIn}&shelterName={shelterNameIn}&capacity={capacityIn}&restrictions={restrictionsIn}&longitude={longitudeIn}&latitude={latitudeIn}&address={addressIn}&phoneNumber={phoneNumberIn}";
+                var uri = $"https://sheltermewebapi.azurewebsites.net/api/increaseCapacity?id={idIn}&shelterName={shelterNameIn}&capacity={capacityIn}&restrictions={restrictionsIn}&longitude={longitudeIn}&latitude={latitudeIn}&address={addressIn}&phoneNumber={phoneNumberIn}";
                 HttpResponseMessage response = await client.PutAsync(uri, stringContent);
             } catch (Exception ex) {
                 throw ex;

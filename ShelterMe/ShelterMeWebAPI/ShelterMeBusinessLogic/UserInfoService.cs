@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShelterMeDataAccess;
+using ShelterMeObjects;
 
 namespace ShelterMeBusinessLogic {
     public class UserInfoService {
@@ -21,6 +22,13 @@ namespace ShelterMeBusinessLogic {
                 return true;
             }
             return false;
+        }
+
+        public UserInfo GetUserData(string username) {
+            UserInfo user = new UserInfo();
+            UserInfoData userInfo = new UserInfoData();
+            user = userInfo.getUserData(username);
+            return user;
         }
 
         public void EnterData(string firstName, string lastName, string email, string password, string userType) {

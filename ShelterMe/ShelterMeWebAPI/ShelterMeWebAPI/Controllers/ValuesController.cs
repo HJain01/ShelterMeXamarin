@@ -16,11 +16,25 @@ namespace ShelterMeWebAPI.Controllers {
             return service.ContainsUsernameAndPassword(username, password);
         }
 
+        // GET api/userData
+        [HttpGet("userData")]
+        public UserInfo getUserData(string username) {
+            UserInfoService service = new UserInfoService();
+            return service.GetUserData(username);
+        }
+
         //GET api/shelterInformation
         [HttpGet("shelterInformation")]
         public ShelterInfo getShelterInformation(string shelterName) {
             ShelterInfoService service = new ShelterInfoService();
             return service.getShelterInformation(shelterName);
+        }
+        
+        //GET api/allShelters
+        [HttpGet("allShelters")]
+        public List<ShelterInfo> getShelterInformation() {
+            ShelterInfoService service = new ShelterInfoService();
+            return service.getShelterInformation();
         }
 
         //GET api/shelterInformationRestrictions

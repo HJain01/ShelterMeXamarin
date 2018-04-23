@@ -7,9 +7,11 @@ namespace ShelterMe {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddShelterPage : ContentPage
 	{
-		public AddShelterPage ()
+        UserInformation userIn = new UserInformation();
+        public AddShelterPage (UserInformation user)
 		{
 			InitializeComponent ();
+            userIn = user;
 		}
         private async void AddShelter2Clicked(Object sender, EventArgs e) {
             ShelterMeWebAPIAgent agent = new ShelterMeWebAPIAgent();
@@ -39,7 +41,7 @@ namespace ShelterMe {
                 restrictionsString += "Anyone ";
             }
             agent.EnterShelterData(newId, shelterName.Text, Convert.ToInt32(capacity.Text), restrictionsString, (float) Convert.ToDouble(longitude.Text), (float) Convert.ToDouble(latitude.Text), address.Text, phoneNumber.Text);
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PushAsync(new MainPage(userIn));
         }
 	}
 }

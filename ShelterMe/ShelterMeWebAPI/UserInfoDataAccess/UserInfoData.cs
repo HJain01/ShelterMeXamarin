@@ -43,6 +43,25 @@ namespace ShelterMeDataAccess {
             }
             return password;
         }
+        public UserInfo getUserData(string username) {
+            UserInfo user = new UserInfo();
+            using (SqlConnection conn = new SqlConnection(
+                "Data Source=tcp:shelterme.database.windows.net,1433;Initial Catalog=ShelterMe;User ID=Harsh_Jain;Password=Nadiad1998")) {
+                SqlDataReader rdr = null;
+                conn.Open();
+                SqlCommand command = new SqlCommand($"SELECT * FROM USER_INFORMATION WHERE EMAIL='{username}'", conn);
+                rdr = command.ExecuteReader();
+                while (rdr.Read()) {
+                    user.FirstName = rdr[0].ToString();
+                    user.LastName = rdr[1].ToString();
+                    user.Email = rdr[2].ToString();
+                    user.Password = rdr[3].ToString();
+                    user.UserType = rdr[4].ToString();
+                }
+                conn.Close();
+            }
+            return user;
+        }
         public void EnterUserData(string firstName, string lastName, string email, string password, string userType) {
             using (SqlConnection conn = new SqlConnection(
                 "Data Source=tcp:shelterme.database.windows.net,1433;Initial Catalog=ShelterMe;User ID=Harsh_Jain;Password=Nadiad1998")) {

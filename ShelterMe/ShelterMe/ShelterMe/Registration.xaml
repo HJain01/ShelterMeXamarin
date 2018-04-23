@@ -8,32 +8,39 @@
                     VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Vertical"
                          VerticalOptions="FillAndExpand">
-                <Label Text="Enter your information below" 
+                <Label Text="Enter your information below"
+                       FontSize="Large"
                    HorizontalTextAlignment="Center"
                    VerticalOptions="FillAndExpand"/>
+                <Label Text="First Name"/>
                 <Entry x:Name ="FirstName"
                        Placeholder="First Name"
                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="Last Name"/>
                 <Entry x:Name="LastName" 
                        Placeholder="Last Name"
                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="Email"/>
                 <Entry x:Name="Email"
                        Placeholder="Email"
                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="Password"/>
                 <Entry x:Name="Password"
                        Placeholder="Password"
                        IsPassword="True"
                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="Confirm Password"/>
                 <Entry x:Name="ConfirmPassword"
                        Placeholder="Confirm Password"
                        IsPassword="True"
                        HorizontalOptions="FillAndExpand"/>
+                <Label Text="User Type" />
                 <Picker x:Name="UserType"
                         Title="User Type"
                         HorizontalOptions="FillAndExpand">
                     <Picker.Items>
                         <x:String>User</x:String>
-                        <x:String>Administrator</x:String>
+                        <x:String>Admin</x:String>
                     </Picker.Items>
                 </Picker>
                 <Button Text="Sign Up"

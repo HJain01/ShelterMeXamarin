@@ -4,6 +4,10 @@
              x:Class="ShelterMe.WelcomePage">
     <ContentPage.Content>
         <AbsoluteLayout BackgroundColor="#F4C6B7">
+            <Label Text="Shelter Me"
+                   FontSize="32"
+                   AbsoluteLayout.LayoutBounds=".6,.1,.7,.2"
+                   AbsoluteLayout.LayoutFlags="All"/>
             <Image Source="ShelterMeLogo.jpg" 
                    Aspect="Fill" 
                    AbsoluteLayout.LayoutBounds=".5,.4,1,.3" 

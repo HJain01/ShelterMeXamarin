@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ShelterMe {
-    class UserInformation {
+    public class UserInformation {
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }

@@ -16,8 +16,12 @@
                 <controls:CheckBox x:Name="children" DefaultText="Children" />
                 <controls:CheckBox x:Name="youngAdults" DefaultText="Young Adults" />
                 <controls:CheckBox x:Name="anyone" DefaultText="Anyone" />
-                <Button Text="Filter"
-                        Clicked="Filter2Clicked"
+                <Button Text="Show List"
+                        Clicked="ListClicked"
+                        WidthRequest="100"
+                        HorizontalOptions="Center"/>
+                <Button Text="Show Map"
+                        Clicked="MapClicked"
                         WidthRequest="100"
                         HorizontalOptions="Center"/>
             </StackLayout>

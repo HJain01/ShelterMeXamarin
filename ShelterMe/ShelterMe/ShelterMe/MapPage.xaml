@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="ShelterMe.MapPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map x:Name="map"
+                      InitialCameraUpdate="33.7490, -84.3880, 11"
+                      VerticalOptions="FillAndExpand">
+                <maps:Map.Pins>
+                    
+                </maps:Map.Pins>
+            </maps:Map>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

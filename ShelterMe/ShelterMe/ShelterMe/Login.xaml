@@ -29,6 +29,7 @@
                             AbsoluteLayout.LayoutFlags="All">
                 <Entry x:Name="PasswordEntry" 
                        Placeholder="Password" 
+                       IsPassword="True"
                        AbsoluteLayout.LayoutBounds=".05,.3,.5,.4" 
                        AbsoluteLayout.LayoutFlags="All" />
                 <Label Text="Password:" 

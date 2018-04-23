@@ -35,6 +35,35 @@ namespace ShelterMeDataAccess {
                 return null;
             }
         }
+        public List<ShelterInfo> getShelterInformation() {
+            try {
+                List<ShelterInfo> shelterList = new List<ShelterInfo>();
+                ShelterInfo shelterInformation = new ShelterInfo();
+                using (SqlConnection conn = new SqlConnection(
+                    "Data Source=tcp:shelterme.database.windows.net,1433;Initial Catalog=ShelterMe;User ID=Harsh_Jain;Password=Nadiad1998")) {
+                    SqlDataReader rdr = null;
+                    conn.Open();
+                    SqlCommand command = new SqlCommand($"SELECT * FROM SHELTER_INFORMATION", conn);
+                    rdr = command.ExecuteReader();
+                    while (rdr.Read()) {
+                        shelterInformation = new ShelterInfo();
+                        shelterInformation.UniqueKey = Convert.ToInt32(rdr[0]);
+                        shelterInformation.ShelterName = (rdr[1].ToString());
+                        shelterInformation.Capacity = Convert.ToInt32(rdr[2]);
+                        shelterInformation.Restrictions = (rdr[3].ToString());
+                        shelterInformation.Longitude = (float)Convert.ToDouble(rdr[4]);
+                        shelterInformation.Latitude = (float)Convert.ToDouble(rdr[5]);
+                        shelterInformation.Address = (rdr[6].ToString());
+                        shelterInformation.PhoneNumber = (rdr[7].ToString());
+                        shelterList.Add(shelterInformation);
+                    }
+                    conn.Close();
+                }
+                return shelterList;
+            } catch (Exception) {
+                return null;
+            }
+        }
         public List<ShelterInfo> getShelterInformationByRestrictions(string genderOrAgeRange) {
             try {
                 List<ShelterInfo> shelterInformation = new List<ShelterInfo>();

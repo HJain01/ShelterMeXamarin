@@ -14,6 +14,12 @@ namespace ShelterMeBusinessLogic {
             shelterData = shelterInfo.getShelterInformation(shelterName);
             return shelterData;
         }
+        public List<ShelterInfo> getShelterInformation() {
+            ShelterInfoData shelterInfoData = new ShelterInfoData();
+            List<ShelterInfo> shelterList = new List<ShelterInfo>();
+            shelterList = shelterInfoData.getShelterInformation();
+            return shelterList;
+        }
         public ShelterInfo getFilteredSheltersByName(string shelterName) {
             ShelterInfoData filteredSheltersByName = new ShelterInfoData();
             ShelterInfo filteredShelterByNameList = new ShelterInfo();

@@ -13,7 +13,7 @@ namespace ShelterMe
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new InformationPage("Fuqua Hall")) { BarBackgroundColor = Color.FromHex("#F4C6B7") };
+			MainPage = new NavigationPage(new WelcomePage()) { BarBackgroundColor = Color.FromHex("#F4C6B7") };
 		}
 
 		protected override void OnStart ()

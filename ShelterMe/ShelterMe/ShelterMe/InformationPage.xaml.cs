@@ -29,11 +29,11 @@ namespace ShelterMe {
         private async void ReserveClicked(Object sender, EventArgs e) {
             var action = await DisplayActionSheet("Reserve A Room", "Cancel", "Reserve");
             if (action.Equals("Reserve") && user.claimedARoom == false && Convert.ToInt32(Capacity.Text) != 0) {
-                agent.reduceCapacity(Convert.ToInt32(UniqueKey.Text), ShelterName.Text, Convert.ToInt32(Capacity.Text), Restrictions.Text, (float) Convert.ToDouble(Longitude.Text), (float) Convert.ToDouble(Latitude.Text), Address.Text, PhoneNumber.Text);
+                agent.reduceCapacity(Convert.ToInt32(UniqueKey.Text), ShelterName.Text, Convert.ToInt32(Capacity.Text), Restrictions.Text, (float)Convert.ToDouble(Longitude.Text), (float)Convert.ToDouble(Latitude.Text), Address.Text, PhoneNumber.Text);
                 user.claimedARoom = true;
                 LeaveRoom.IsVisible = true;
-                await Navigation.PushAsync(new MainPage());
-            } else {
+                Capacity.Text = (Convert.ToInt32(Capacity.Text) - 1).ToString();
+            } else if  (action.Equals("Reserve") && (user.claimedARoom == true || Convert.ToInt32(Capacity.Text) == 0)) {
                 await DisplayAlert("Cannot reserve room", "You cannot reserve a room because either you already have a room reserved or the capacity is 0", "Ok");
             }
         }
@@ -43,7 +43,7 @@ namespace ShelterMe {
                 agent.increaseCapacity(Convert.ToInt32(UniqueKey.Text), ShelterName.Text, Convert.ToInt32(Capacity.Text), Restrictions.Text, (float)Convert.ToDouble(Longitude.Text), (float)Convert.ToDouble(Latitude.Text), Address.Text, PhoneNumber.Text);
                 user.claimedARoom = false;
                 LeaveRoom.IsVisible = false;
-                await Navigation.PushAsync(new MainPage());
+                Capacity.Text = (Convert.ToInt32(Capacity.Text) + 1).ToString();
             }
         }
     }

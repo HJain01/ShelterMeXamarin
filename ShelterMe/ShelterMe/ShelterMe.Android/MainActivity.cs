@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin;
 
 namespace ShelterMe.Droid
 {
@@ -20,6 +21,7 @@ namespace ShelterMe.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            FormsGoogleMaps.Init(this, bundle);
             LoadApplication(new App());
         }
     }
